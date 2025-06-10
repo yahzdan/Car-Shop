@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Payment</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    padding: 25px;
+}
+
+.container form {
+    width: 700px;
+    padding: 40px;
+    padding-top: 0;
+    background: #fff;
+    border-radius: 10px;
+}
+
+form .row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.row .column {
+    flex: 1 1 250px;
+}
+
+.column .title {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.column .input-box {
+    margin: 15px 0;
+}
+
+.input-box span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.column .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.flex .input-box {
+    margin-top: 5px;
+}
+
+.input-box img {
+    width: 38%;
+    height: 35px;
+
+}
+
+form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #8175d3;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+form .btn:hover {
+    background: #6a5acd;
+}
+
+form h2{
+    text-align: center;
+    padding: 30px;
+    font-weight: lighter;
+    font-size: 1.8em;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+    <form action="">
+        <h2>Pay 20,000,000br</h2>
+        <div class="row">
+            <div class="column">
+                <h3 class="title">Billing Address</h3>
+                <div class="input-box">
+                    <label for="fullname">Full Name :</label>
+                    <input type="text" id="fullname" placeholder="Mesfin Tesfaye" required autocomplete="name">
+                </div>
+                <div class="input-box">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" placeholder="example@example.com" required autocomplete="email">
+                </div>
+                <div class="input-box">
+                    <label for="address">Address :</label>
+                    <input type="text" id="address" placeholder="Room - Street - Locality" required>
+                </div>
+                <div class="input-box">
+                    <label for="city">City :</label>
+                    <input type="text" id="city" placeholder="Addis Ababa" required>
+                </div>
+
+                <div class="flex">
+                    <div class="input-box">
+                        <label for="state">State :</label>
+                        <input type="text" id="state" placeholder="Ethiopia" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="zipcode">Zip Code :</label>
+                        <input type="number" id="zipcode" placeholder="123 456" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h3 class="title">Payment</h3>
+                <div class="input-box">
+                    <span>Cards Accepted :</span>
+                    <img src="https://www.jokercard.ca/wp-content/uploads/2023/05/visa_MC.webp" alt="visa">
+                </div>
+                <div class="input-box">
+                    <label for="cardname">Name On Card :</label>
+                    <input type="text" id="cardname" placeholder="Mr. Abebe Tesfaye" required>
+                </div>
+                <div class="input-box">
+                    <label for="cardnumber">Credit Card Number :</label>
+                    <input type="number" id="cardnumber" placeholder="1111 2222 3333 4444" required>
+                </div>
+                <div class="input-box">
+                    <label for="expmonth">Exp. Month :</label>
+                    <input type="text" id="expmonth" placeholder="August" required>
+                </div>
+            
+                <div class="flex">
+                    <div class="input-box">
+                        <label for="expyear">Exp. Year :</label>
+                        <input type="number" id="expyear" placeholder="2025" required min="2024">
+                    </div>
+                    <div class="input-box">
+                        <label for="cvv">CVV :</label>
+                        <input type="number" id="cvv" placeholder="123" required minlength="3" maxlength="4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+    <div id="feedback" style="margin-top:15px; color:green; display:none;">
+    Your payment is pending!
+</div>
+</form>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('feedback').style.display = 'block';
+    });
+</script>
+</div>
+
+</body>
+
+</html>
