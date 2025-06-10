@@ -22,14 +22,12 @@ body {
     overflow: hidden;
 }
 .logo{
-    position: relative;
-    display: flex;
-    padding: 0px;
-    width: 48px;
-    height: 48px;
-    left: 28%;
-    top: 12px;
-    align-items: center;
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    margin-top: 5px;
 }
     
 .inside{
